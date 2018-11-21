@@ -1,0 +1,4 @@
+/.idea
+/CT-venv
+config.ini
+.pytest_cache

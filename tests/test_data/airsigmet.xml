@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<response>
+  <request_index>25370420</request_index>
+  <data_source name="airsigmets" />
+  <request type="retrieve" />
+  <errors />
+  <warnings />
+  <time_taken_ms>709</time_taken_ms>
+  <data num_results="42">
+    <AIRSIGMET>
+      <raw_text>WAUS46 KKCI 140845
+SFOT WA 140845
+AIRMET TANGO UPDT 1 FOR TURB AND LLWS VALID UNTIL 141500
+AIRMET TURB...WA OR CA ID MT WY NV UT CO
+FROM YDC TO 80SSW YYN TO DLN TO 20SW DBS TO BOY TO 80SW DIK TO
+70SW RAP TO 40NNW GLD TO 60SSE HVE TO 40SW ILC TO 20ENE FMG TO
+20SW LKV TO 50NE SEA TO YDC
+MOD TURB BTN 170 AND FL380. CONDS CONTG BYD 15Z THRU 21Z.
+OTLK VALID 1500-2100Z...TURB WA OR CA ID MT WY NV UT CO AZ NM
+BOUNDED BY 30S YXC-40NW ISN-70SW RAP-30N GLD-30NE RSK-20WSW TBC-
+50NE EHF-20ENE SAC-40NNE RBL-40ESE YKM-30S YXC
+MOD TURB BTN 170 AND FL380. CONDS CONTG THRU 21Z.</raw_text>
+      <valid_time_from>2018-10-14T08:45:00Z</valid_time_from>
+      <valid_time_to>2018-10-14T15:00:00Z</valid_time_to>
+      <altitude min_ft_msl="17000" max_ft_msl="38000" />
+      <hazard type="TURB" severity="MOD" />
+      <airsigmet_type>AIRMET</airsigmet_type>
+      <area num_points="14">
+        <point>
+          <longitude>-120.52</longitude>
+          <latitude>49.47</latitude>
+        </point>
+        <point>
+          <longitude>-108.4562</longitude>
+          <latitude>49.0491</latitude>
+        </point>
+        <point>
+          <longitude>-112.55</longitude>
+          <latitude>45.25</latitude>
+        </point>
+        <point>
+          <longitude>-112.5359</longitude>
+          <latitude>43.8545</latitude>
+        </point>
+        <point>
+          <longitude>-108.3</longitude>
+          <latitude>43.46</latitude>
+        </point>
+        <point>
+          <longitude>-104.1212</longitude>
+          <latitude>45.9119</latitude>
+        </point>
+        <point>
+          <longitude>-104.1418</longitude>
+          <latitude>43.1486</latitude>
+        </point>
+        <point>
+          <longitude>-102.0221</longitude>
+          <latitude>40.0037</latitude>
+        </point>
+        <point>
+          <longitude>-110.2191</longitude>
+          <latitude>37.4978</latitude>
+        </point>
+        <point>
+          <longitude>-114.9847</longitude>
+          <latitude>37.7784</latitude>
+        </point>
+        <point>
+          <longitude>-119.2611</longitude>
+          <latitude>39.6565</latitude>
+        </point>
+        <point>
+          <longitude>-120.8275</longitude>
+          <latitude>42.2545</latitude>
+        </point>
+        <point>
+          <longitude>-121.4267</longitude>
+          <latitude>48.0274</latitude>
+        </point>
+        <point>
+          <longitude>-120.52</longitude>
+          <latitude>49.47</latitude>
+        </point>
+      </area>
+    </AIRSIGMET>
+  </data>
+</response>

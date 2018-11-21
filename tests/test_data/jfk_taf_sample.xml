@@ -1,0 +1,1146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<response xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XML-Schema-instance" version="1.2" xsi:noNamespaceSchemaLocation="http://aviationweather.gov/adds/schema/taf1_2.xsd">
+  <request_index>4837586</request_index>
+  <data_source name="tafs" />
+  <request type="retrieve" />
+  <errors />
+  <warnings />
+  <time_taken_ms>24</time_taken_ms>
+  <data num_results="12">
+    <TAF>
+      <raw_text>KJFK 061239Z 0613/0718 17010KT P6SM -RA SCT015 BKN025 OVC035 TEMPO 0613/0614 3SM -SNRA BR BKN015 OVC025 FM061400 17015G23KT 5SM -RA BR SCT015 OVC030 FM061700 20020G27KT P6SM BKN080 FM062200 20017KT P6SM BKN080 FM070300 24014KT P6SM SCT050 BKN080 FM070500 27008KT P6SM VCSH OVC050 FM070600 31011G20KT P6SM VCSH OVC050 FM071600 32010KT P6SM BKN100</raw_text>
+      <station_id>KJFK</station_id>
+      <issue_time>2018-04-06T12:39:00Z</issue_time>
+      <bulletin_time>2018-04-06T12:39:00Z</bulletin_time>
+      <valid_time_from>2018-04-06T13:00:00Z</valid_time_from>
+      <valid_time_to>2018-04-07T18:00:00Z</valid_time_to>
+      <remarks>AMD</remarks>
+      <latitude>40.63</latitude>
+      <longitude>-73.77</longitude>
+      <elevation_m>9.0</elevation_m>
+      <forecast>
+        <fcst_time_from>2018-04-06T13:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T14:00:00Z</fcst_time_to>
+        <wind_dir_degrees>170</wind_dir_degrees>
+        <wind_speed_kt>10</wind_speed_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <wx_string>-RA</wx_string>
+        <sky_condition sky_cover="SCT" cloud_base_ft_agl="1500" />
+        <sky_condition sky_cover="BKN" cloud_base_ft_agl="2500" />
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="3500" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T13:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T14:00:00Z</fcst_time_to>
+        <change_indicator>TEMPO</change_indicator>
+        <visibility_statute_mi>3.0</visibility_statute_mi>
+        <wx_string>-SN -RA BR</wx_string>
+        <sky_condition sky_cover="BKN" cloud_base_ft_agl="1500" />
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="2500" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T14:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T17:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>170</wind_dir_degrees>
+        <wind_speed_kt>15</wind_speed_kt>
+        <wind_gust_kt>23</wind_gust_kt>
+        <visibility_statute_mi>5.0</visibility_statute_mi>
+        <wx_string>-RA BR</wx_string>
+        <sky_condition sky_cover="SCT" cloud_base_ft_agl="1500" />
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="3000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T17:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T22:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>200</wind_dir_degrees>
+        <wind_speed_kt>20</wind_speed_kt>
+        <wind_gust_kt>27</wind_gust_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="BKN" cloud_base_ft_agl="8000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T22:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-07T03:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>200</wind_dir_degrees>
+        <wind_speed_kt>17</wind_speed_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="BKN" cloud_base_ft_agl="8000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-07T03:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-07T05:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>240</wind_dir_degrees>
+        <wind_speed_kt>14</wind_speed_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="SCT" cloud_base_ft_agl="5000" />
+        <sky_condition sky_cover="BKN" cloud_base_ft_agl="8000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-07T05:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-07T06:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>270</wind_dir_degrees>
+        <wind_speed_kt>8</wind_speed_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <wx_string>VCSH</wx_string>
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="5000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-07T06:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-07T16:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>310</wind_dir_degrees>
+        <wind_speed_kt>11</wind_speed_kt>
+        <wind_gust_kt>20</wind_gust_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <wx_string>VCSH</wx_string>
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="5000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-07T16:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-07T18:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>320</wind_dir_degrees>
+        <wind_speed_kt>10</wind_speed_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="BKN" cloud_base_ft_agl="10000" />
+      </forecast>
+    </TAF>
+    <TAF>
+      <raw_text>KJFK 061201Z 0612/0718 16008KT P6SM -RA SCT030 OVC070 TEMPO 0612/0614 3SM -SNRA BR OVC025 FM061400 17015G23KT 5SM -RA BR SCT015 OVC030 FM061700 20020G27KT P6SM BKN080 FM062200 20017KT P6SM BKN080 FM070300 24014KT P6SM SCT050 BKN080 FM070500 27008KT P6SM VCSH OVC050 FM070600 31011G20KT P6SM VCSH OVC050 FM071600 32010KT P6SM BKN100</raw_text>
+      <station_id>KJFK</station_id>
+      <issue_time>2018-04-06T12:01:00Z</issue_time>
+      <bulletin_time>2018-04-06T12:01:00Z</bulletin_time>
+      <valid_time_from>2018-04-06T12:00:00Z</valid_time_from>
+      <valid_time_to>2018-04-07T18:00:00Z</valid_time_to>
+      <latitude>40.63</latitude>
+      <longitude>-73.77</longitude>
+      <elevation_m>9.0</elevation_m>
+      <forecast>
+        <fcst_time_from>2018-04-06T12:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T14:00:00Z</fcst_time_to>
+        <wind_dir_degrees>160</wind_dir_degrees>
+        <wind_speed_kt>8</wind_speed_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <wx_string>-RA</wx_string>
+        <sky_condition sky_cover="SCT" cloud_base_ft_agl="3000" />
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="7000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T12:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T14:00:00Z</fcst_time_to>
+        <change_indicator>TEMPO</change_indicator>
+        <visibility_statute_mi>3.0</visibility_statute_mi>
+        <wx_string>-SN -RA BR</wx_string>
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="2500" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T14:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T17:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>170</wind_dir_degrees>
+        <wind_speed_kt>15</wind_speed_kt>
+        <wind_gust_kt>23</wind_gust_kt>
+        <visibility_statute_mi>5.0</visibility_statute_mi>
+        <wx_string>-RA BR</wx_string>
+        <sky_condition sky_cover="SCT" cloud_base_ft_agl="1500" />
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="3000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T17:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T22:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>200</wind_dir_degrees>
+        <wind_speed_kt>20</wind_speed_kt>
+        <wind_gust_kt>27</wind_gust_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="BKN" cloud_base_ft_agl="8000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T22:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-07T03:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>200</wind_dir_degrees>
+        <wind_speed_kt>17</wind_speed_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="BKN" cloud_base_ft_agl="8000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-07T03:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-07T05:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>240</wind_dir_degrees>
+        <wind_speed_kt>14</wind_speed_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="SCT" cloud_base_ft_agl="5000" />
+        <sky_condition sky_cover="BKN" cloud_base_ft_agl="8000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-07T05:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-07T06:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>270</wind_dir_degrees>
+        <wind_speed_kt>8</wind_speed_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <wx_string>VCSH</wx_string>
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="5000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-07T06:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-07T16:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>310</wind_dir_degrees>
+        <wind_speed_kt>11</wind_speed_kt>
+        <wind_gust_kt>20</wind_gust_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <wx_string>VCSH</wx_string>
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="5000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-07T16:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-07T18:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>320</wind_dir_degrees>
+        <wind_speed_kt>10</wind_speed_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="BKN" cloud_base_ft_agl="10000" />
+      </forecast>
+    </TAF>
+    <TAF>
+      <raw_text>KJFK 060838Z 0609/0712 VRB03KT P6SM BKN060 FM061200 17014G20KT P6SM SCT015 OVC030 TEMPO 0612/0614 4SM -RASN BR OVC015 FM061500 18015G23KT 5SM -RA BR SCT015 OVC030 FM061700 20020G27KT P6SM BKN080 FM062200 20017KT P6SM BKN080 FM070300 24014KT P6SM SCT050 BKN080 FM070600 30014G20KT P6SM SCT030 BKN050</raw_text>
+      <station_id>KJFK</station_id>
+      <issue_time>2018-04-06T08:38:00Z</issue_time>
+      <bulletin_time>2018-04-06T08:38:00Z</bulletin_time>
+      <valid_time_from>2018-04-06T09:00:00Z</valid_time_from>
+      <valid_time_to>2018-04-07T12:00:00Z</valid_time_to>
+      <remarks>AMD</remarks>
+      <latitude>40.63</latitude>
+      <longitude>-73.77</longitude>
+      <elevation_m>9.0</elevation_m>
+      <forecast>
+        <fcst_time_from>2018-04-06T09:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T12:00:00Z</fcst_time_to>
+        <wind_dir_degrees>0</wind_dir_degrees>
+        <wind_speed_kt>3</wind_speed_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="BKN" cloud_base_ft_agl="6000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T12:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T14:00:00Z</fcst_time_to>
+        <change_indicator>TEMPO</change_indicator>
+        <visibility_statute_mi>4.0</visibility_statute_mi>
+        <wx_string>-RA -SN BR</wx_string>
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="1500" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T12:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T15:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>170</wind_dir_degrees>
+        <wind_speed_kt>14</wind_speed_kt>
+        <wind_gust_kt>20</wind_gust_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="SCT" cloud_base_ft_agl="1500" />
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="3000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T15:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T17:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>180</wind_dir_degrees>
+        <wind_speed_kt>15</wind_speed_kt>
+        <wind_gust_kt>23</wind_gust_kt>
+        <visibility_statute_mi>5.0</visibility_statute_mi>
+        <wx_string>-RA BR</wx_string>
+        <sky_condition sky_cover="SCT" cloud_base_ft_agl="1500" />
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="3000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T17:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T22:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>200</wind_dir_degrees>
+        <wind_speed_kt>20</wind_speed_kt>
+        <wind_gust_kt>27</wind_gust_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="BKN" cloud_base_ft_agl="8000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T22:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-07T03:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>200</wind_dir_degrees>
+        <wind_speed_kt>17</wind_speed_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="BKN" cloud_base_ft_agl="8000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-07T03:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-07T06:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>240</wind_dir_degrees>
+        <wind_speed_kt>14</wind_speed_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="SCT" cloud_base_ft_agl="5000" />
+        <sky_condition sky_cover="BKN" cloud_base_ft_agl="8000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-07T06:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-07T12:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>300</wind_dir_degrees>
+        <wind_speed_kt>14</wind_speed_kt>
+        <wind_gust_kt>20</wind_gust_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="SCT" cloud_base_ft_agl="3000" />
+        <sky_condition sky_cover="BKN" cloud_base_ft_agl="5000" />
+      </forecast>
+    </TAF>
+    <TAF>
+      <raw_text>KJFK 060543Z 0606/0712 VRB04KT P6SM FEW060 BKN150 FM060900 20004KT P6SM BKN060 FM061200 17014G20KT P6SM SCT015 OVC030 TEMPO 0612/0614 4SM -RASN BR OVC015 FM061500 18015G23KT 5SM -RA BR SCT015 OVC030 FM061700 20020G27KT P6SM BKN080 FM062200 20017KT P6SM BKN080 FM070300 24014KT P6SM SCT050 BKN080 FM070600 30014G20KT P6SM SCT030 BKN050</raw_text>
+      <station_id>KJFK</station_id>
+      <issue_time>2018-04-06T05:43:00Z</issue_time>
+      <bulletin_time>2018-04-06T05:43:00Z</bulletin_time>
+      <valid_time_from>2018-04-06T06:00:00Z</valid_time_from>
+      <valid_time_to>2018-04-07T12:00:00Z</valid_time_to>
+      <latitude>40.63</latitude>
+      <longitude>-73.77</longitude>
+      <elevation_m>9.0</elevation_m>
+      <forecast>
+        <fcst_time_from>2018-04-06T06:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T09:00:00Z</fcst_time_to>
+        <wind_dir_degrees>0</wind_dir_degrees>
+        <wind_speed_kt>4</wind_speed_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="FEW" cloud_base_ft_agl="6000" />
+        <sky_condition sky_cover="BKN" cloud_base_ft_agl="15000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T09:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T12:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>200</wind_dir_degrees>
+        <wind_speed_kt>4</wind_speed_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="BKN" cloud_base_ft_agl="6000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T12:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T14:00:00Z</fcst_time_to>
+        <change_indicator>TEMPO</change_indicator>
+        <visibility_statute_mi>4.0</visibility_statute_mi>
+        <wx_string>-RA -SN BR</wx_string>
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="1500" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T12:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T15:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>170</wind_dir_degrees>
+        <wind_speed_kt>14</wind_speed_kt>
+        <wind_gust_kt>20</wind_gust_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="SCT" cloud_base_ft_agl="1500" />
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="3000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T15:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T17:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>180</wind_dir_degrees>
+        <wind_speed_kt>15</wind_speed_kt>
+        <wind_gust_kt>23</wind_gust_kt>
+        <visibility_statute_mi>5.0</visibility_statute_mi>
+        <wx_string>-RA BR</wx_string>
+        <sky_condition sky_cover="SCT" cloud_base_ft_agl="1500" />
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="3000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T17:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T22:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>200</wind_dir_degrees>
+        <wind_speed_kt>20</wind_speed_kt>
+        <wind_gust_kt>27</wind_gust_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="BKN" cloud_base_ft_agl="8000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T22:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-07T03:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>200</wind_dir_degrees>
+        <wind_speed_kt>17</wind_speed_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="BKN" cloud_base_ft_agl="8000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-07T03:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-07T06:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>240</wind_dir_degrees>
+        <wind_speed_kt>14</wind_speed_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="SCT" cloud_base_ft_agl="5000" />
+        <sky_condition sky_cover="BKN" cloud_base_ft_agl="8000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-07T06:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-07T12:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>300</wind_dir_degrees>
+        <wind_speed_kt>14</wind_speed_kt>
+        <wind_gust_kt>20</wind_gust_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="SCT" cloud_base_ft_agl="3000" />
+        <sky_condition sky_cover="BKN" cloud_base_ft_agl="5000" />
+      </forecast>
+    </TAF>
+    <TAF>
+      <raw_text>KJFK 060246Z 0603/0706 28010KT P6SM FEW080 FM060500 VRB04KT P6SM FEW060 BKN150 FM060900 19007KT P6SM FEW040 OVC080 FM061200 17014G20KT P6SM OVC030 TEMPO 0613/0614 4SM -RASN OVC015 FM061500 18015G23KT 5SM -RA SCT015 OVC035 FM061800 20012G20KT P6SM BKN050</raw_text>
+      <station_id>KJFK</station_id>
+      <issue_time>2018-04-06T02:46:00Z</issue_time>
+      <bulletin_time>2018-04-06T02:46:00Z</bulletin_time>
+      <valid_time_from>2018-04-06T03:00:00Z</valid_time_from>
+      <valid_time_to>2018-04-07T06:00:00Z</valid_time_to>
+      <remarks>AMD</remarks>
+      <latitude>40.63</latitude>
+      <longitude>-73.77</longitude>
+      <elevation_m>9.0</elevation_m>
+      <forecast>
+        <fcst_time_from>2018-04-06T03:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T05:00:00Z</fcst_time_to>
+        <wind_dir_degrees>280</wind_dir_degrees>
+        <wind_speed_kt>10</wind_speed_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="FEW" cloud_base_ft_agl="8000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T05:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T09:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>0</wind_dir_degrees>
+        <wind_speed_kt>4</wind_speed_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="FEW" cloud_base_ft_agl="6000" />
+        <sky_condition sky_cover="BKN" cloud_base_ft_agl="15000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T09:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T12:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>190</wind_dir_degrees>
+        <wind_speed_kt>7</wind_speed_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="FEW" cloud_base_ft_agl="4000" />
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="8000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T12:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T15:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>170</wind_dir_degrees>
+        <wind_speed_kt>14</wind_speed_kt>
+        <wind_gust_kt>20</wind_gust_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="3000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T13:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T14:00:00Z</fcst_time_to>
+        <change_indicator>TEMPO</change_indicator>
+        <visibility_statute_mi>4.0</visibility_statute_mi>
+        <wx_string>-RA -SN</wx_string>
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="1500" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T15:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T18:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>180</wind_dir_degrees>
+        <wind_speed_kt>15</wind_speed_kt>
+        <wind_gust_kt>23</wind_gust_kt>
+        <visibility_statute_mi>5.0</visibility_statute_mi>
+        <wx_string>-RA</wx_string>
+        <sky_condition sky_cover="SCT" cloud_base_ft_agl="1500" />
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="3500" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T18:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-07T06:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>200</wind_dir_degrees>
+        <wind_speed_kt>12</wind_speed_kt>
+        <wind_gust_kt>20</wind_gust_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="BKN" cloud_base_ft_agl="5000" />
+      </forecast>
+    </TAF>
+    <TAF>
+      <raw_text>KJFK 052343Z 0600/0706 28016G22KT P6SM FEW070 FM060300 29010KT P6SM FEW060 BKN200 FM060500 VRB04KT P6SM FEW060 BKN150 FM060900 14007KT P6SM FEW040 OVC080 FM061200 17014G20KT P6SM OVC030 TEMPO 0613/0614 4SM -RASN OVC015 FM061500 18015G23KT 5SM -RA SCT015 OVC035 FM061800 20012G20KT P6SM BKN050</raw_text>
+      <station_id>KJFK</station_id>
+      <issue_time>2018-04-05T23:43:00Z</issue_time>
+      <bulletin_time>2018-04-05T23:43:00Z</bulletin_time>
+      <valid_time_from>2018-04-06T00:00:00Z</valid_time_from>
+      <valid_time_to>2018-04-07T06:00:00Z</valid_time_to>
+      <latitude>40.63</latitude>
+      <longitude>-73.77</longitude>
+      <elevation_m>9.0</elevation_m>
+      <forecast>
+        <fcst_time_from>2018-04-06T00:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T03:00:00Z</fcst_time_to>
+        <wind_dir_degrees>280</wind_dir_degrees>
+        <wind_speed_kt>16</wind_speed_kt>
+        <wind_gust_kt>22</wind_gust_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="FEW" cloud_base_ft_agl="7000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T03:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T05:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>290</wind_dir_degrees>
+        <wind_speed_kt>10</wind_speed_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="FEW" cloud_base_ft_agl="6000" />
+        <sky_condition sky_cover="BKN" cloud_base_ft_agl="20000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T05:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T09:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>0</wind_dir_degrees>
+        <wind_speed_kt>4</wind_speed_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="FEW" cloud_base_ft_agl="6000" />
+        <sky_condition sky_cover="BKN" cloud_base_ft_agl="15000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T09:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T12:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>140</wind_dir_degrees>
+        <wind_speed_kt>7</wind_speed_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="FEW" cloud_base_ft_agl="4000" />
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="8000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T12:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T15:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>170</wind_dir_degrees>
+        <wind_speed_kt>14</wind_speed_kt>
+        <wind_gust_kt>20</wind_gust_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="3000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T13:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T14:00:00Z</fcst_time_to>
+        <change_indicator>TEMPO</change_indicator>
+        <visibility_statute_mi>4.0</visibility_statute_mi>
+        <wx_string>-RA -SN</wx_string>
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="1500" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T15:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T18:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>180</wind_dir_degrees>
+        <wind_speed_kt>15</wind_speed_kt>
+        <wind_gust_kt>23</wind_gust_kt>
+        <visibility_statute_mi>5.0</visibility_statute_mi>
+        <wx_string>-RA</wx_string>
+        <sky_condition sky_cover="SCT" cloud_base_ft_agl="1500" />
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="3500" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T18:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-07T06:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>200</wind_dir_degrees>
+        <wind_speed_kt>12</wind_speed_kt>
+        <wind_gust_kt>20</wind_gust_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="BKN" cloud_base_ft_agl="5000" />
+      </forecast>
+    </TAF>
+    <TAF>
+      <raw_text>KJFK 052115Z 0521/0624 28021G27KT P6SM FEW060 SCT080 FM060000 28015G23KT P6SM FEW060 FM060200 30008KT P6SM FEW060 BKN200 FM060500 VRB04KT P6SM FEW060 BKN150 FM060900 14007KT P6SM FEW040 OVC080 FM061200 17014G20KT P6SM OVC030 TEMPO 0613/0614 4SM -RASN OVC015 FM061500 18015G23KT 5SM -RA SCT015 OVC035 FM061800 20012G20KT P6SM BKN050 OVC080</raw_text>
+      <station_id>KJFK</station_id>
+      <issue_time>2018-04-05T21:15:00Z</issue_time>
+      <bulletin_time>2018-04-05T21:15:00Z</bulletin_time>
+      <valid_time_from>2018-04-05T21:00:00Z</valid_time_from>
+      <valid_time_to>2018-04-07T00:00:00Z</valid_time_to>
+      <remarks>AMD</remarks>
+      <latitude>40.63</latitude>
+      <longitude>-73.77</longitude>
+      <elevation_m>9.0</elevation_m>
+      <forecast>
+        <fcst_time_from>2018-04-05T21:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T00:00:00Z</fcst_time_to>
+        <wind_dir_degrees>280</wind_dir_degrees>
+        <wind_speed_kt>21</wind_speed_kt>
+        <wind_gust_kt>27</wind_gust_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="FEW" cloud_base_ft_agl="6000" />
+        <sky_condition sky_cover="SCT" cloud_base_ft_agl="8000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T00:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T02:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>280</wind_dir_degrees>
+        <wind_speed_kt>15</wind_speed_kt>
+        <wind_gust_kt>23</wind_gust_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="FEW" cloud_base_ft_agl="6000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T02:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T05:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>300</wind_dir_degrees>
+        <wind_speed_kt>8</wind_speed_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="FEW" cloud_base_ft_agl="6000" />
+        <sky_condition sky_cover="BKN" cloud_base_ft_agl="20000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T05:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T09:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>0</wind_dir_degrees>
+        <wind_speed_kt>4</wind_speed_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="FEW" cloud_base_ft_agl="6000" />
+        <sky_condition sky_cover="BKN" cloud_base_ft_agl="15000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T09:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T12:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>140</wind_dir_degrees>
+        <wind_speed_kt>7</wind_speed_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="FEW" cloud_base_ft_agl="4000" />
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="8000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T12:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T15:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>170</wind_dir_degrees>
+        <wind_speed_kt>14</wind_speed_kt>
+        <wind_gust_kt>20</wind_gust_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="3000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T13:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T14:00:00Z</fcst_time_to>
+        <change_indicator>TEMPO</change_indicator>
+        <visibility_statute_mi>4.0</visibility_statute_mi>
+        <wx_string>-RA -SN</wx_string>
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="1500" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T15:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T18:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>180</wind_dir_degrees>
+        <wind_speed_kt>15</wind_speed_kt>
+        <wind_gust_kt>23</wind_gust_kt>
+        <visibility_statute_mi>5.0</visibility_statute_mi>
+        <wx_string>-RA</wx_string>
+        <sky_condition sky_cover="SCT" cloud_base_ft_agl="1500" />
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="3500" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T18:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-07T00:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>200</wind_dir_degrees>
+        <wind_speed_kt>12</wind_speed_kt>
+        <wind_gust_kt>20</wind_gust_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="BKN" cloud_base_ft_agl="5000" />
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="8000" />
+      </forecast>
+    </TAF>
+    <TAF>
+      <raw_text>KJFK 051903Z 0519/0624 29018G26KT P6SM SCT070 FM052300 29016G20KT P6SM SCT060 FM060300 30010KT P6SM FEW060 BKN200 FM060500 VRB04KT P6SM FEW060 BKN150 FM060900 14007KT P6SM FEW040 OVC080 FM061200 17014G20KT P6SM OVC030 TEMPO 0613/0614 4SM -RASN OVC015 FM061500 18015G23KT 5SM -RA SCT015 OVC035 FM061800 20012G20KT P6SM BKN050 OVC080</raw_text>
+      <station_id>KJFK</station_id>
+      <issue_time>2018-04-05T19:03:00Z</issue_time>
+      <bulletin_time>2018-04-05T19:03:00Z</bulletin_time>
+      <valid_time_from>2018-04-05T19:00:00Z</valid_time_from>
+      <valid_time_to>2018-04-07T00:00:00Z</valid_time_to>
+      <remarks>AMD</remarks>
+      <latitude>40.63</latitude>
+      <longitude>-73.77</longitude>
+      <elevation_m>9.0</elevation_m>
+      <forecast>
+        <fcst_time_from>2018-04-05T19:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-05T23:00:00Z</fcst_time_to>
+        <wind_dir_degrees>290</wind_dir_degrees>
+        <wind_speed_kt>18</wind_speed_kt>
+        <wind_gust_kt>26</wind_gust_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="SCT" cloud_base_ft_agl="7000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-05T23:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T03:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>290</wind_dir_degrees>
+        <wind_speed_kt>16</wind_speed_kt>
+        <wind_gust_kt>20</wind_gust_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="SCT" cloud_base_ft_agl="6000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T03:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T05:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>300</wind_dir_degrees>
+        <wind_speed_kt>10</wind_speed_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="FEW" cloud_base_ft_agl="6000" />
+        <sky_condition sky_cover="BKN" cloud_base_ft_agl="20000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T05:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T09:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>0</wind_dir_degrees>
+        <wind_speed_kt>4</wind_speed_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="FEW" cloud_base_ft_agl="6000" />
+        <sky_condition sky_cover="BKN" cloud_base_ft_agl="15000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T09:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T12:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>140</wind_dir_degrees>
+        <wind_speed_kt>7</wind_speed_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="FEW" cloud_base_ft_agl="4000" />
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="8000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T12:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T15:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>170</wind_dir_degrees>
+        <wind_speed_kt>14</wind_speed_kt>
+        <wind_gust_kt>20</wind_gust_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="3000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T13:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T14:00:00Z</fcst_time_to>
+        <change_indicator>TEMPO</change_indicator>
+        <visibility_statute_mi>4.0</visibility_statute_mi>
+        <wx_string>-RA -SN</wx_string>
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="1500" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T15:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T18:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>180</wind_dir_degrees>
+        <wind_speed_kt>15</wind_speed_kt>
+        <wind_gust_kt>23</wind_gust_kt>
+        <visibility_statute_mi>5.0</visibility_statute_mi>
+        <wx_string>-RA</wx_string>
+        <sky_condition sky_cover="SCT" cloud_base_ft_agl="1500" />
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="3500" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T18:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-07T00:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>200</wind_dir_degrees>
+        <wind_speed_kt>12</wind_speed_kt>
+        <wind_gust_kt>20</wind_gust_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="BKN" cloud_base_ft_agl="5000" />
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="8000" />
+      </forecast>
+    </TAF>
+    <TAF>
+      <raw_text>KJFK 051727Z 0518/0624 28017G26KT P6SM FEW060 FM052300 29016G22KT P6SM SCT060 FM060300 30010KT P6SM FEW060 BKN200 FM060500 VRB04KT P6SM FEW060 BKN150 FM060900 14007KT P6SM FEW040 OVC080 FM061200 17014G20KT P6SM OVC030 TEMPO 0613/0614 4SM -RASN OVC015 FM061500 18015G23KT 5SM -RA SCT015 OVC035 FM061800 20012G20KT P6SM BKN050 OVC080</raw_text>
+      <station_id>KJFK</station_id>
+      <issue_time>2018-04-05T17:27:00Z</issue_time>
+      <bulletin_time>2018-04-05T17:27:00Z</bulletin_time>
+      <valid_time_from>2018-04-05T18:00:00Z</valid_time_from>
+      <valid_time_to>2018-04-07T00:00:00Z</valid_time_to>
+      <latitude>40.63</latitude>
+      <longitude>-73.77</longitude>
+      <elevation_m>9.0</elevation_m>
+      <forecast>
+        <fcst_time_from>2018-04-05T18:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-05T23:00:00Z</fcst_time_to>
+        <wind_dir_degrees>280</wind_dir_degrees>
+        <wind_speed_kt>17</wind_speed_kt>
+        <wind_gust_kt>26</wind_gust_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="FEW" cloud_base_ft_agl="6000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-05T23:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T03:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>290</wind_dir_degrees>
+        <wind_speed_kt>16</wind_speed_kt>
+        <wind_gust_kt>22</wind_gust_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="SCT" cloud_base_ft_agl="6000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T03:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T05:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>300</wind_dir_degrees>
+        <wind_speed_kt>10</wind_speed_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="FEW" cloud_base_ft_agl="6000" />
+        <sky_condition sky_cover="BKN" cloud_base_ft_agl="20000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T05:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T09:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>0</wind_dir_degrees>
+        <wind_speed_kt>4</wind_speed_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="FEW" cloud_base_ft_agl="6000" />
+        <sky_condition sky_cover="BKN" cloud_base_ft_agl="15000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T09:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T12:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>140</wind_dir_degrees>
+        <wind_speed_kt>7</wind_speed_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="FEW" cloud_base_ft_agl="4000" />
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="8000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T12:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T15:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>170</wind_dir_degrees>
+        <wind_speed_kt>14</wind_speed_kt>
+        <wind_gust_kt>20</wind_gust_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="3000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T13:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T14:00:00Z</fcst_time_to>
+        <change_indicator>TEMPO</change_indicator>
+        <visibility_statute_mi>4.0</visibility_statute_mi>
+        <wx_string>-RA -SN</wx_string>
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="1500" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T15:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T18:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>180</wind_dir_degrees>
+        <wind_speed_kt>15</wind_speed_kt>
+        <wind_gust_kt>23</wind_gust_kt>
+        <visibility_statute_mi>5.0</visibility_statute_mi>
+        <wx_string>-RA</wx_string>
+        <sky_condition sky_cover="SCT" cloud_base_ft_agl="1500" />
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="3500" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T18:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-07T00:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>200</wind_dir_degrees>
+        <wind_speed_kt>12</wind_speed_kt>
+        <wind_gust_kt>20</wind_gust_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="BKN" cloud_base_ft_agl="5000" />
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="8000" />
+      </forecast>
+    </TAF>
+    <TAF>
+      <raw_text>KJFK 051541Z 0516/0618 29020G30KT P6SM FEW060 FM052300 29016G25KT P6SM SCT060 FM060300 30010KT P6SM FEW060 BKN200 FM060500 VRB04KT P6SM FEW060 BKN150 FM060900 14007KT P6SM FEW040 OVC080 FM061200 15010G17KT 3SM -RASN SCT008 BKN025 FM061500 18015G23KT 5SM -RA SCT015 OVC035</raw_text>
+      <station_id>KJFK</station_id>
+      <issue_time>2018-04-05T15:41:00Z</issue_time>
+      <bulletin_time>2018-04-05T15:41:00Z</bulletin_time>
+      <valid_time_from>2018-04-05T16:00:00Z</valid_time_from>
+      <valid_time_to>2018-04-06T18:00:00Z</valid_time_to>
+      <remarks>AMD</remarks>
+      <latitude>40.63</latitude>
+      <longitude>-73.77</longitude>
+      <elevation_m>9.0</elevation_m>
+      <forecast>
+        <fcst_time_from>2018-04-05T16:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-05T23:00:00Z</fcst_time_to>
+        <wind_dir_degrees>290</wind_dir_degrees>
+        <wind_speed_kt>20</wind_speed_kt>
+        <wind_gust_kt>30</wind_gust_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="FEW" cloud_base_ft_agl="6000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-05T23:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T03:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>290</wind_dir_degrees>
+        <wind_speed_kt>16</wind_speed_kt>
+        <wind_gust_kt>25</wind_gust_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="SCT" cloud_base_ft_agl="6000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T03:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T05:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>300</wind_dir_degrees>
+        <wind_speed_kt>10</wind_speed_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="FEW" cloud_base_ft_agl="6000" />
+        <sky_condition sky_cover="BKN" cloud_base_ft_agl="20000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T05:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T09:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>0</wind_dir_degrees>
+        <wind_speed_kt>4</wind_speed_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="FEW" cloud_base_ft_agl="6000" />
+        <sky_condition sky_cover="BKN" cloud_base_ft_agl="15000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T09:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T12:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>140</wind_dir_degrees>
+        <wind_speed_kt>7</wind_speed_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="FEW" cloud_base_ft_agl="4000" />
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="8000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T12:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T15:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>150</wind_dir_degrees>
+        <wind_speed_kt>10</wind_speed_kt>
+        <wind_gust_kt>17</wind_gust_kt>
+        <visibility_statute_mi>3.0</visibility_statute_mi>
+        <wx_string>-RA -SN</wx_string>
+        <sky_condition sky_cover="SCT" cloud_base_ft_agl="800" />
+        <sky_condition sky_cover="BKN" cloud_base_ft_agl="2500" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T15:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T18:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>180</wind_dir_degrees>
+        <wind_speed_kt>15</wind_speed_kt>
+        <wind_gust_kt>23</wind_gust_kt>
+        <visibility_statute_mi>5.0</visibility_statute_mi>
+        <wx_string>-RA</wx_string>
+        <sky_condition sky_cover="SCT" cloud_base_ft_agl="1500" />
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="3500" />
+      </forecast>
+    </TAF>
+    <TAF>
+      <raw_text>KJFK 051338Z 0514/0618 29020G30KT P6SM FEW060 FM052300 29016G25KT P6SM SCT060 FM060300 30010KT P6SM FEW060 BKN200 FM060500 VRB04KT P6SM FEW060 BKN150 FM060900 14007KT P6SM FEW040 OVC080 FM061200 15010G17KT 3SM -RASN SCT008 BKN025 FM061500 18015G23KT 5SM -RA SCT015 OVC035</raw_text>
+      <station_id>KJFK</station_id>
+      <issue_time>2018-04-05T13:38:00Z</issue_time>
+      <bulletin_time>2018-04-05T13:38:00Z</bulletin_time>
+      <valid_time_from>2018-04-05T14:00:00Z</valid_time_from>
+      <valid_time_to>2018-04-06T18:00:00Z</valid_time_to>
+      <remarks>AMD</remarks>
+      <latitude>40.63</latitude>
+      <longitude>-73.77</longitude>
+      <elevation_m>9.0</elevation_m>
+      <forecast>
+        <fcst_time_from>2018-04-05T14:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-05T23:00:00Z</fcst_time_to>
+        <wind_dir_degrees>290</wind_dir_degrees>
+        <wind_speed_kt>20</wind_speed_kt>
+        <wind_gust_kt>30</wind_gust_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="FEW" cloud_base_ft_agl="6000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-05T23:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T03:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>290</wind_dir_degrees>
+        <wind_speed_kt>16</wind_speed_kt>
+        <wind_gust_kt>25</wind_gust_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="SCT" cloud_base_ft_agl="6000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T03:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T05:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>300</wind_dir_degrees>
+        <wind_speed_kt>10</wind_speed_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="FEW" cloud_base_ft_agl="6000" />
+        <sky_condition sky_cover="BKN" cloud_base_ft_agl="20000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T05:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T09:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>0</wind_dir_degrees>
+        <wind_speed_kt>4</wind_speed_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="FEW" cloud_base_ft_agl="6000" />
+        <sky_condition sky_cover="BKN" cloud_base_ft_agl="15000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T09:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T12:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>140</wind_dir_degrees>
+        <wind_speed_kt>7</wind_speed_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="FEW" cloud_base_ft_agl="4000" />
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="8000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T12:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T15:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>150</wind_dir_degrees>
+        <wind_speed_kt>10</wind_speed_kt>
+        <wind_gust_kt>17</wind_gust_kt>
+        <visibility_statute_mi>3.0</visibility_statute_mi>
+        <wx_string>-RA -SN</wx_string>
+        <sky_condition sky_cover="SCT" cloud_base_ft_agl="800" />
+        <sky_condition sky_cover="BKN" cloud_base_ft_agl="2500" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T15:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T18:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>180</wind_dir_degrees>
+        <wind_speed_kt>15</wind_speed_kt>
+        <wind_gust_kt>23</wind_gust_kt>
+        <visibility_statute_mi>5.0</visibility_statute_mi>
+        <wx_string>-RA</wx_string>
+        <sky_condition sky_cover="SCT" cloud_base_ft_agl="1500" />
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="3500" />
+      </forecast>
+    </TAF>
+    <TAF>
+      <raw_text>KJFK 051135Z 0512/0618 30015G25KT P6SM FEW060 FM051400 29020G30KT P6SM FEW060 FM052300 29016G25KT P6SM SCT060 FM060300 30010KT P6SM FEW060 BKN200 FM060500 VRB04KT P6SM FEW060 BKN150 FM060900 14007KT P6SM FEW040 OVC080 FM061200 15010G17KT 3SM -RASN SCT008 BKN025 FM061500 18015G23KT 5SM -RA SCT015 OVC035</raw_text>
+      <station_id>KJFK</station_id>
+      <issue_time>2018-04-05T11:35:00Z</issue_time>
+      <bulletin_time>2018-04-05T11:35:00Z</bulletin_time>
+      <valid_time_from>2018-04-05T12:00:00Z</valid_time_from>
+      <valid_time_to>2018-04-06T18:00:00Z</valid_time_to>
+      <latitude>40.63</latitude>
+      <longitude>-73.77</longitude>
+      <elevation_m>9.0</elevation_m>
+      <forecast>
+        <fcst_time_from>2018-04-05T12:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-05T14:00:00Z</fcst_time_to>
+        <wind_dir_degrees>300</wind_dir_degrees>
+        <wind_speed_kt>15</wind_speed_kt>
+        <wind_gust_kt>25</wind_gust_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="FEW" cloud_base_ft_agl="6000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-05T14:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-05T23:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>290</wind_dir_degrees>
+        <wind_speed_kt>20</wind_speed_kt>
+        <wind_gust_kt>30</wind_gust_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="FEW" cloud_base_ft_agl="6000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-05T23:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T03:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>290</wind_dir_degrees>
+        <wind_speed_kt>16</wind_speed_kt>
+        <wind_gust_kt>25</wind_gust_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="SCT" cloud_base_ft_agl="6000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T03:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T05:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>300</wind_dir_degrees>
+        <wind_speed_kt>10</wind_speed_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="FEW" cloud_base_ft_agl="6000" />
+        <sky_condition sky_cover="BKN" cloud_base_ft_agl="20000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T05:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T09:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>0</wind_dir_degrees>
+        <wind_speed_kt>4</wind_speed_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="FEW" cloud_base_ft_agl="6000" />
+        <sky_condition sky_cover="BKN" cloud_base_ft_agl="15000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T09:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T12:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>140</wind_dir_degrees>
+        <wind_speed_kt>7</wind_speed_kt>
+        <visibility_statute_mi>6.21</visibility_statute_mi>
+        <sky_condition sky_cover="FEW" cloud_base_ft_agl="4000" />
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="8000" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T12:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T15:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>150</wind_dir_degrees>
+        <wind_speed_kt>10</wind_speed_kt>
+        <wind_gust_kt>17</wind_gust_kt>
+        <visibility_statute_mi>3.0</visibility_statute_mi>
+        <wx_string>-RA -SN</wx_string>
+        <sky_condition sky_cover="SCT" cloud_base_ft_agl="800" />
+        <sky_condition sky_cover="BKN" cloud_base_ft_agl="2500" />
+      </forecast>
+      <forecast>
+        <fcst_time_from>2018-04-06T15:00:00Z</fcst_time_from>
+        <fcst_time_to>2018-04-06T18:00:00Z</fcst_time_to>
+        <change_indicator>FM</change_indicator>
+        <wind_dir_degrees>180</wind_dir_degrees>
+        <wind_speed_kt>15</wind_speed_kt>
+        <wind_gust_kt>23</wind_gust_kt>
+        <visibility_statute_mi>5.0</visibility_statute_mi>
+        <wx_string>-RA</wx_string>
+        <sky_condition sky_cover="SCT" cloud_base_ft_agl="1500" />
+        <sky_condition sky_cover="OVC" cloud_base_ft_agl="3500" />
+      </forecast>
+    </TAF>
+  </data>
+</response>
+

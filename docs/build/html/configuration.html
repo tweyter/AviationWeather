@@ -1,0 +1,162 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>CONFIGURATION GUIDE &#8212; AviationWeather  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="API GUIDE" href="api_guide.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="configuration-guide">
+<h1>CONFIGURATION GUIDE<a class="headerlink" href="#configuration-guide" title="Permalink to this headline">¶</a></h1>
+<p>The AviationWeather program requires a configuration file called “config.ini” to be
+in the project’s root folder (ie. the same location as /src /docs etc.)</p>
+<p>config.ini requires the three following sub-headings: sqlalchemy, flightaware.com and logging
+The configuration settings for each sub-heading are as follows:</p>
+<dl class="docutils">
+<dt><em>sqlalchemy</em></dt>
+<dd><ul class="first last simple">
+<li>drivername: Should be mysql+pymysql unless we switch to a different database such as postgresql</li>
+<li>username: The username for database access.</li>
+<li>password: The database access password for the given username.</li>
+<li>host: Host address of the database. Either localhost or a URL.</li>
+<li>port: Port number for the database. If local, it should be 3306.</li>
+<li>database: The name of the database schema to be used.</li>
+</ul>
+</dd>
+<dt><em>flightaware.com</em></dt>
+<dd><ul class="first last simple">
+<li>username: The username for FlightAware API access.</li>
+<li>api_key: The API key for FlightAware API access.</li>
+</ul>
+</dd>
+<dt><em>logging</em></dt>
+<dd><ul class="first last simple">
+<li>environment: The environment of the current program, whether a development machine (our laptops), the testing server, or a production server. Choices are:
+1. development
+2. testing
+3. production</li>
+<li>logpath: The file path where you would like error logs to be located. If the path does not yet exist it will be automatically created.</li>
+</ul>
+</dd>
+</dl>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">sqlalchemy</span><span class="p">]</span>
+<span class="n">drivername</span> <span class="o">=</span> <span class="n">mysql</span><span class="o">+</span><span class="n">pymysql</span>
+<span class="n">username</span> <span class="o">=</span> <span class="n">root</span>
+<span class="n">password</span> <span class="o">=</span> <span class="n">mysupersecretpassword</span>
+<span class="n">host</span> <span class="o">=</span> <span class="n">localhost</span>
+<span class="n">port</span> <span class="o">=</span> <span class="mi">3306</span>
+<span class="n">database</span> <span class="o">=</span> <span class="n">sample_data</span>
+<span class="p">[</span><span class="n">flightaware</span><span class="o">.</span><span class="n">com</span><span class="p">]</span>
+<span class="n">username</span> <span class="o">=</span> <span class="n">fcview</span>
+<span class="n">api_key</span> <span class="o">=</span> <span class="mi">123</span><span class="n">ABC789XYZ</span>
+<span class="p">[</span><span class="n">logging</span><span class="p">]</span>
+<span class="n">environment</span> <span class="o">=</span> <span class="n">development</span>
+<span class="n">logpath</span> <span class="o">=</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">someuser</span><span class="o">/</span><span class="n">code</span><span class="o">/</span><span class="n">aviationweather</span><span class="o">/</span><span class="n">logs</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">AviationWeather</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="api_guide.html">API GUIDE</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">CONFIGURATION GUIDE</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="api_guide.html" title="previous chapter">API GUIDE</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Thorsten Weyter.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/configuration.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
