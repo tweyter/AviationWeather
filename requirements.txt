@@ -1,5 +1,7 @@
-zeep
-requests
-lxml
-python-dateutil
-sqlalchemy
+zeep>=3.1.0
+lxml>=4.2.5
+PyGeodesy>=18.10.26
+PyMySQL>=0.9.2
+python-dateutil>=2.7.5
+requests>=2.20.0
+SQLAlchemy>=1.2.12
