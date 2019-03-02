@@ -1,5 +1,6 @@
 import os.path
 import gzip
+import datetime
 
 from sqlalchemy.orm.session import Session
 from lxml import etree
@@ -7,13 +8,6 @@ from lxml import etree
 from src import converter
 from src.sql_classes import AirSigmet, Metar, MetarSkyCondition
 from src.xml_classes import SkyConditionXML, TurbulenceConditionXML
-
-
-def test_get_data():
-    """
-    There is probably no need to test this.
-    """
-    assert True is True
 
 
 def test_bytes_to_xml():
@@ -37,13 +31,6 @@ def test_convert_airsigmets():
     root = etree.parse(pth)
     maps = converter.convert_airsigmets(root)
     assert maps[0].altitude__min_ft_msl == 17000
-
-
-def test_get_db_session():
-    """
-    There is probably no need to test this.
-    """
-    assert True is True
 
 
 def test_to_db(dbsession: Session):
@@ -90,3 +77,28 @@ def test_metars_to_db(dbsession: Session):
     assert isinstance(sky_condition, MetarSkyCondition)
     result = dbsession.query(MetarSkyCondition).all()
     assert [sky_condition] == result
+
+
+def test_delete_old_data(dbsession: Session):
+    """
+    Test to see that data older than 7 days is deleted, while data newer than 7 days is maintained.
+
+    :param dbsession: test database
+    """
+    current_time = datetime.datetime.now()
+    expiration_time = current_time - datetime.timedelta(days=10)
+    raw_metar_data = dict(
+        raw_text='sample',
+        station_id='KPBI',
+        observation_time=expiration_time,
+    )
+    old_metar = Metar(**raw_metar_data)
+    raw_metar_data.update({'observation_time': current_time})
+    new_metar = Metar(**raw_metar_data)
+    dbsession.add_all((old_metar, new_metar,))
+    dbsession.commit()
+    converter.delete_old_data('metar', dbsession)
+    check_old = dbsession.query(Metar).get(old_metar.id)
+    assert check_old is None
+    check_new = dbsession.query(Metar).get(new_metar.id)
+    assert check_new is not None

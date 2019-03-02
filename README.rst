@@ -18,6 +18,8 @@ host = host address (localhost or IP address)
 
 port = should be 3306
 
+database = should be aviationweather
+
 [logging]
 
 environment = development or testing or production

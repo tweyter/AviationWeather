@@ -9,12 +9,15 @@ from typing import List, Union
 import gzip
 import sys
 import logging
+import datetime
 
 from lxml import etree
 from lxml.etree import Element
 from sqlalchemy import create_engine
 from sqlalchemy.engine.url import URL
 from sqlalchemy.orm import sessionmaker, Session
+from sqlalchemy.exc import OperationalError
+from sqlalchemy_utils.functions import database_exists, create_database
 import requests
 
 from src.sql_classes import AirSigmet, Taf, Metar
@@ -221,6 +224,22 @@ def convert_metars(root: etree) -> List[Metar]:
     return maps
 
 
+def delete_old_data(weather_type: str, dbsession: Session) -> None:
+    """
+    Deletes weather data from the database if it is older than 7 days.
+
+    :param weather_type: metar, taf, or airsigmet
+    """
+    current_time = datetime.datetime.now()
+    deletion_time = current_time - datetime.timedelta(days=7)
+    if weather_type == 'metar':
+        dbsession.query(Metar).filter(Metar.observation_time < deletion_time).delete()
+    elif weather_type == 'taf':
+        dbsession.query(Taf).filter(Taf.issue_time < deletion_time).delete()
+    elif weather_type == 'airsigmet':
+        dbsession.query(AirSigmet).filter(AirSigmet.valid_time_to < deletion_time).delete()
+
+
 def get_db_session(config: configparser.ConfigParser) -> Session:
     """
     Open a database session.
@@ -236,6 +255,10 @@ def get_db_session(config: configparser.ConfigParser) -> Session:
         config['sqlalchemy']['port'],
         config['sqlalchemy']['database'],
     )
+    if not database_exists(url):
+        msg = f"No database named <{config['sqlalchemy']['database']}> found. Creating..."
+        logger.info(msg)
+        create_database(url)
     engine = create_engine(url)
     session_maker = sessionmaker(bind=engine)
     session = session_maker()
@@ -292,8 +315,13 @@ def main(args):
         mapd = convert_metars(raw_xml)
     else:
         return
-    db_session = get_db_session(config)
+    try:
+        db_session = get_db_session(config)
+    except OperationalError:
+        logger.exception('Database could not be accessed.')
+        return
     to_db(mapd, db_session)
+    delete_old_data(weather_type, db_session)
 
 
 if __name__ == "__main__":
