@@ -9,7 +9,7 @@ Version 0.1.0
 Initial commit.
 
 -------------
-Version 0.1.0
+Version 0.1.1
 -------------
 Added README.txt
 Added sqlalchemy-utils to package requirements
