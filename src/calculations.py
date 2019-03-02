@@ -26,8 +26,8 @@ from requests.auth import HTTPBasicAuth
 from zeep import Client
 from zeep.transports import Transport
 
-from sql_classes import Base, AirSigmet, Taf, Metar
-import logging_setup
+from src.sql_classes import Base, AirSigmet, Taf, Metar
+from src import logging_setup
 
 
 logging_setup.setup()
@@ -342,7 +342,8 @@ def metar_output(departure_metar, arrival_metar):
     return raw_json
 
 
-def main(wx_type: str, flt_num: str, departure_epoch: int):
+def main():
+    wx_type, flt_num, departure_epoch = clean_args(sys.argv)
     config = configparser.ConfigParser()
     config.read(
         os.path.join(
@@ -389,8 +390,7 @@ def clean_args(args):
 
 
 if __name__ == "__main__":
-    weather_type, flight_num, epoch = clean_args(sys.argv)
     # faFlightID = 'JBU696-1540880773-airline-0132'
     # flight_num = "JBU696"
     # epoch = 1541107680
-    main(weather_type, flight_num, epoch)
+    main()

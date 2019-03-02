@@ -1,15 +1,18 @@
 import datetime
 from collections import OrderedDict
 import json
+import os
 
 from sqlalchemy.orm.session import Session
 from pygeodesy.sphericalNvector import LatLon
 from lxml import etree
 from dateutil import parser
 
-import calculations
-from sql_classes import AirSigmet, Points, Metar, Taf
+from src import calculations
+from src.sql_classes import AirSigmet, Points, Metar, Taf
 
+
+TESTS_PATH = os.path.dirname(os.path.abspath(__file__))
 
 def test_test_equality():
     latlon1 = LatLon(0, 0)
@@ -83,13 +86,6 @@ def test_find_intersecting_airsigs(monkeypatch):
     assert airsigs == result
 
 
-def test_get_flightaware_client():
-    """
-    Probably don't need to test this.
-    """
-    assert True is True
-
-
 class Service:
 
     def __init__(self, faflightid, departure_time, dep_apt='', arr_apt=''):
@@ -155,7 +151,8 @@ def test_get_metar_data(dbsession: Session):
 
 
 def test_output():
-    data = etree.parse('/home/thorsten/PycharmProjects/XMLtoSQL/tests/test_data/airsigmet.xml')
+
+    data = etree.parse(os.path.join(TESTS_PATH, 'test_data/airsigmet.xml'))
     m = data.find('data')
     m_data = m.find('AIRSIGMET')
     airsig = AirSigmet(
@@ -168,7 +165,7 @@ def test_output():
 
 
 def test_metar_output():
-    data = etree.parse('/home/thorsten/PycharmProjects/XMLtoSQL/tests/test_data/metar.xml')
+    data = etree.parse(os.path.join(TESTS_PATH, 'test_data/metar.xml'))
     m = data.find('data')
     m_data = m.find('METAR')
     metar = Metar(
@@ -207,9 +204,27 @@ def test_tafs(dbsession: Session):
     assert [dep_taf, arr_taf] == result
 
 
-def test_tafs2(db_sample: Session):
+def test_tafs2(dbsession: Session):
     epoch = 1542697200.0  # 2018-11-20 02:00:00
     departure_airport = 'KRDR'
     arrival_airport = 'KIND'
-    result = calculations.tafs(db_sample, departure_airport, epoch, arrival_airport, epoch)
+    taf_data = dict(
+        raw_text='sample',
+        station_id='',
+        issue_time=datetime.datetime(2018, 11, 20, 0, 0),
+        bulletin_time=datetime.datetime(2018, 11, 20, 0, 0),
+        valid_time_from=datetime.datetime(2018, 11, 20, 0, 0),
+        valid_time_to=datetime.datetime(2018, 11, 21, 0, 0),
+        remarks='sample',
+        latitude=0.0,
+        longitude=0.0,
+        elevation_m=0,
+    )
+    taf_data.update({'station_id': 'KRDR'})
+    krdr_taf = Taf(**taf_data)
+    taf_data.update({'station_id': 'KIND'})
+    kind_taf = Taf(**taf_data)
+    dbsession.add_all((krdr_taf, kind_taf,))
+    dbsession.commit()
+    result = calculations.tafs(dbsession, departure_airport, epoch, arrival_airport, epoch)
     assert result[0].station_id == 'KRDR'

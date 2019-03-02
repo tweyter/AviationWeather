@@ -1,6 +1,6 @@
 # coding=utf-8
 
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 
 __title__ = "AviationWeather"
 __description__ = "A utility for both storing aviation weather into SQL " \
@@ -12,4 +12,3 @@ __email__ = "tweyter@gmail.com"
 
 __license__ = "Proprietary"
 __copyright__ = "Copyright (c) 2018 Thorsten Weyter"
-

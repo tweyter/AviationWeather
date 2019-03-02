@@ -4,8 +4,33 @@ import os.path
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 from sqlalchemy.engine.url import URL
-from sql_classes import AirSigmet, Points
+from sqlalchemy_utils.functions import database_exists, create_database
 import pytest
+
+from src.sql_classes import AirSigmet, Points
+
+
+def base_url() -> URL:
+    config = configparser.ConfigParser()
+    config.read(
+        os.path.join(
+            os.path.dirname(os.path.dirname(__file__)),
+            "config.ini",
+        )
+    )
+    url = URL(
+        config['sqlalchemy']['drivername'],
+        config['sqlalchemy']['username'],
+        config['sqlalchemy']['password'],
+        config['sqlalchemy']['host'],
+        config['sqlalchemy']['port'],
+    )
+    return url
+
+
+def verify_database(url: URL):
+    if not database_exists(url):
+        create_database(url)
 
 
 @pytest.fixture(scope='session')
@@ -25,6 +50,7 @@ def engine():
         config['sqlalchemy']['port'],
         'test_database',
     )
+    verify_database(url)
     return create_engine(url)
 
 
@@ -45,6 +71,7 @@ def sample_data_engine():
         config['sqlalchemy']['port'],
         'sample_data',
     )
+    verify_database(url)
     return create_engine(url)
 
 
@@ -72,17 +99,4 @@ def dbsession(engine, tables):
     # roll back the broader transaction
     transaction.rollback()
     # put back the connection to the connection pool
-    connection.close()
-
-
-@pytest.fixture
-def db_sample(sample_data_engine):
-    connection = sample_data_engine.connect()
-    transaction = connection.begin()
-    session = Session(bind=connection)
-
-    yield session
-
-    session.close()
-    transaction.rollback()
     connection.close()

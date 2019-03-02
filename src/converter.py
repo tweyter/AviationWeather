@@ -21,7 +21,7 @@ from src.sql_classes import AirSigmet, Taf, Metar
 from src.xml_classes import AirSigmetXML2, PointsXML2, TafXML, ForecastXML, SkyConditionXML
 from src.xml_classes import TurbulenceConditionXML, IcingConditionXML
 from src.xml_classes import MetarXML, MetarSkyConditionXML
-import logging_setup
+from src import logging_setup
 
 
 logging_setup.setup()
@@ -48,7 +48,7 @@ def get_data(weather_type: str) -> bytes:
     return req.content
 
 
-def bytes_to_xml(xml_bytes: bytes) -> bytes:
+def bytes_to_xml(xml_bytes: bytes) -> Element:
     """
     Decompress GZIP data.
 

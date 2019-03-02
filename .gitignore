@@ -1,4 +1,4 @@
 /.idea
-/CT-venv
+/venv
 config.ini
 .pytest_cache
