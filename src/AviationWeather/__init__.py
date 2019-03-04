@@ -1,7 +1,7 @@
 # coding=utf-8
 from . import calculations, converter
 
-__version__ = '0.1.2'
+__version__ = '0.1.3'
 
 __title__ = "AviationWeather"
 __description__ = "A utility for both storing aviation weather into SQL " \

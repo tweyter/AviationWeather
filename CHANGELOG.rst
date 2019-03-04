@@ -27,3 +27,9 @@ Added exception handling in case of Database access error.
 Removed empty tests.
 
 Added function to delete old weather data.
+
+-------------
+Version 0.1.3
+-------------
+Redid project file structure.
+Added exception handling and error handling to FlightAware client.
