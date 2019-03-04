@@ -14,6 +14,7 @@ from src.AviationWeather.sql_classes import AirSigmet, Points, Metar, Taf
 
 TESTS_PATH = os.path.dirname(os.path.abspath(__file__))
 
+
 def test_test_equality():
     latlon1 = LatLon(0, 0)
     latlon2 = latlon1

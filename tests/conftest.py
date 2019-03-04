@@ -1,11 +1,14 @@
+import os
+import sys
 import configparser
-import os.path
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 from sqlalchemy.engine.url import URL
 from sqlalchemy_utils.functions import database_exists, create_database
 import pytest
+
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from src.AviationWeather.sql_classes import AirSigmet, Points
 

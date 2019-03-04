@@ -353,10 +353,10 @@ def main():
     flight_id, arrival_epoch, dep, arr = get_flightinfostatus(flt_num, departure_epoch, client)
     if flight_id == "":
         return
-    route = get_flight_route_data(client, flight_id)
-    if not route:
-        return
     if wx_type == 'airsigmet':
+        route = get_flight_route_data(client, flight_id)
+        if not route:
+            return
         airsigs = airsigmets(session, departure_epoch, arrival_epoch)
         intersecting_airsigs = find_intersecting_airsigs(airsigs, route)
         result = output(intersecting_airsigs)
@@ -381,7 +381,7 @@ def clean_args(args: list) -> Tuple[str, str, float]:
     if len(args) != 4:
         msg = f'Invalid arguments given: {args}\n'
         msg += "Arguments must be weather type (metar, taf, airsigmet), flight number, " \
-              "and epoch departure time, in that order"
+               "and epoch departure time, in that order"
         logger.info(msg)
         return "", "", 0
     try:
