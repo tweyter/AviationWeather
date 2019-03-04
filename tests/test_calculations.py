@@ -88,8 +88,9 @@ def test_find_intersecting_airsigs(monkeypatch):
 
 class Service:
 
-    def __init__(self, faflightid, departure_time, dep_apt='', arr_apt=''):
+    def __init__(self, faflightid, ident, departure_time, dep_apt='', arr_apt=''):
         self.faflightid = faflightid
+        self.ident = ident
         self.departure_time = departure_time
         self.departure_airport = dep_apt
         self.arrival_airport = arr_apt
@@ -100,6 +101,7 @@ class Service:
         arrival = {"epoch": 0}
         flight = {
             "faFlightID": self.faflightid,
+            "ident": self.ident,
             "filed_departure_time": departure,
             "estimated_arrival_time": arrival,
             "origin": {"code": self.departure_airport},
@@ -116,8 +118,8 @@ class Service:
 
 
 class MockClient:
-    def __init__(self, faflightid, departure_time, dep_apt='', arr_apt=''):
-        self.service = Service(faflightid, departure_time, dep_apt, arr_apt)
+    def __init__(self, faflightid, ident, departure_time, dep_apt='', arr_apt=''):
+        self.service = Service(faflightid, ident, departure_time, dep_apt, arr_apt)
 
 
 def test_get_flightinfostatus():
@@ -126,7 +128,7 @@ def test_get_flightinfostatus():
     dep = 'KSAN'
     arr = 'KBOS'
     departure_time = 0
-    client = MockClient(faflightid, departure_time, dep, arr)
+    client = MockClient(faflightid, flt_num, departure_time, dep, arr)
     result = calculations.get_flightinfostatus(flt_num, departure_time, client)
     assert (faflightid, departure_time, dep, arr) == result
 
@@ -134,7 +136,7 @@ def test_get_flightinfostatus():
 def test_get_flight_route_data():
     faflightid = 'abc123'
     departure_time = 0
-    client = MockClient(faflightid, departure_time)
+    client = MockClient(faflightid, faflightid, departure_time)
     segments = [
         (LatLon(0, 0), LatLon(1, 1)),
     ]
