@@ -25,10 +25,10 @@ from requests import Session as RequestSession
 from requests.auth import HTTPBasicAuth
 from zeep import Client
 from zeep.transports import Transport
+from zeep.exceptions import Fault
 
-from src.sql_classes import Base, AirSigmet, Taf, Metar
-from src import logging_setup
-
+from .sql_classes import Base, AirSigmet, Taf, Metar
+from . import logging_setup
 
 logging_setup.setup()
 logger = logging.getLogger(__name__)
@@ -37,7 +37,7 @@ AIRPORT_DATA = {}
 # Load airport information
 with open(
         os.path.join(
-            os.path.dirname(os.path.dirname(__file__)),
+            os.path.dirname(__file__),
             "static",
             "airports.csv",
         )
@@ -154,7 +154,7 @@ def metars(
     return departure_metars, arrival_metars
 
 
-def airsigmets(session: Session, arrival: int, departure: int) -> List[AirSigmet]:
+def airsigmets(session: Session, arrival: float, departure: float) -> List[AirSigmet]:
     """
     Query AirSigmet data from the database.
 
@@ -249,9 +249,9 @@ def get_flightaware_client(config: configparser):
 
 def get_flightinfostatus(
         flt_num: str,
-        departure_time: int,
+        departure_time: float,
         client
-) -> tuple:
+) -> Tuple[str, float, str, str]:
     """
     Get information for the flight in question.
 
@@ -261,15 +261,19 @@ def get_flightinfostatus(
     :return:
     """
     # todo: Change this to return departure and arrival airports as well.
-    flight_info = client.service.FlightInfoStatus(flt_num)
-
+    try:
+        flight_info = client.service.FlightInfoStatus(flt_num)
+    except Fault:
+        msg = f'{flt_num} is not a valid flight number.'
+        logger.error(msg)
+        return "", 0, "", ""
     for flight in flight_info["flights"]:
-        if flight["filed_departure_time"]["epoch"] == departure_time:
+        if flight["ident"] == flt_num and flight["filed_departure_time"]["epoch"] == int(departure_time):
             return flight["faFlightID"], flight["estimated_arrival_time"]["epoch"], flight['origin']['code'], flight['destination']['code']
-    return ()
+    return "", 0, "", ""
 
 
-def get_flight_route_data(client, flight_id):
+def get_flight_route_data(client, flight_id) -> list:
     """
     Get the waypoint fixes and their latitudes and longitudes for the flight route.
 
@@ -277,8 +281,12 @@ def get_flight_route_data(client, flight_id):
     :param flight_id:
     :return:
     """
-    route = client.service.DecodeFlightRoute(flight_id)
-
+    try:
+        route = client.service.DecodeFlightRoute(flight_id)
+    except Fault:
+        msg = f'Could not find route data for flight_id: {flight_id}'
+        logger.error(msg)
+        return []
     points = []
     for waypoint in route['data']:
         points.append(
@@ -297,20 +305,6 @@ def load_route():
     ]
     segments = list(zip(points, points[1:]))
     return segments
-
-
-def find_flight(departure_time: int):
-    """
-    Look up the flight in FlightAware and get the relevant information.
-
-    :param departure_time: Epoch departure time.
-    :return:
-    """
-    with open("FlightInfoStatus.json") as f:
-        flight_info = json.load(f)
-    for flight in flight_info.get("flights"):
-        if flight["filed_departure_time"]["epoch"] == departure_time:
-            return flight["faFlightID"], flight["estimated_arrival_time"]["epoch"]
 
 
 class Encoder(json.JSONEncoder):
@@ -344,10 +338,12 @@ def metar_output(departure_metar, arrival_metar):
 
 def main():
     wx_type, flt_num, departure_epoch = clean_args(sys.argv)
+    if wx_type == "":
+        return
     config = configparser.ConfigParser()
     config.read(
         os.path.join(
-            os.path.dirname(os.path.dirname(__file__)),
+            os.path.dirname(__file__),
             "config.ini",
         )
     )
@@ -355,7 +351,11 @@ def main():
     session = get_db_session(config)
     client = get_flightaware_client(config)
     flight_id, arrival_epoch, dep, arr = get_flightinfostatus(flt_num, departure_epoch, client)
+    if flight_id == "":
+        return
     route = get_flight_route_data(client, flight_id)
+    if not route:
+        return
     if wx_type == 'airsigmet':
         airsigs = airsigmets(session, departure_epoch, arrival_epoch)
         intersecting_airsigs = find_intersecting_airsigs(airsigs, route)
@@ -371,7 +371,7 @@ def main():
     print(result)
 
 
-def clean_args(args):
+def clean_args(args: list) -> Tuple[str, str, float]:
     """
     Check for the correct number of arguments and make sure they are of the proper format.
     :param args: Command line arguments.
@@ -379,13 +379,17 @@ def clean_args(args):
     """
     choices = {'airsigmet', 'taf', 'metar'}
     if len(args) != 4:
-        return
+        msg = f'Invalid arguments given: {args}\n'
+        msg += "Arguments must be weather type (metar, taf, airsigmet), flight number, " \
+              "and epoch departure time, in that order"
+        logger.info(msg)
+        return "", "", 0
     try:
-        epoch_time = int(args[2])
+        epoch_time = float(args[3])
     except TypeError:
-        return
+        return "", "", 0
     if args[1] not in choices:
-        return
+        return "", "", 0
     return args[1], args[2], epoch_time
 
 

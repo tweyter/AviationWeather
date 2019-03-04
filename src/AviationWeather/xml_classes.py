@@ -2,9 +2,9 @@ import datetime
 
 from dateutil import parser
 
-from src.sql_classes import AirSigmet, Points, Taf, Forecast
-from src.sql_classes import SkyCondition, TurbulenceCondition, IcingCondition
-from src.sql_classes import Metar, MetarSkyCondition
+from .sql_classes import AirSigmet, Points, Taf, Forecast
+from .sql_classes import SkyCondition, TurbulenceCondition, IcingCondition
+from .sql_classes import Metar, MetarSkyCondition
 
 
 class XMLBaseClass:

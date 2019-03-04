@@ -8,8 +8,8 @@ from pygeodesy.sphericalNvector import LatLon
 from lxml import etree
 from dateutil import parser
 
-from src import calculations
-from src.sql_classes import AirSigmet, Points, Metar, Taf
+from src.AviationWeather import calculations
+from src.AviationWeather.sql_classes import AirSigmet, Points, Metar, Taf
 
 
 TESTS_PATH = os.path.dirname(os.path.abspath(__file__))

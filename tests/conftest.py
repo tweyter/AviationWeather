@@ -7,7 +7,7 @@ from sqlalchemy.engine.url import URL
 from sqlalchemy_utils.functions import database_exists, create_database
 import pytest
 
-from src.sql_classes import AirSigmet, Points
+from src.AviationWeather.sql_classes import AirSigmet, Points
 
 
 def base_url() -> URL:
@@ -15,6 +15,8 @@ def base_url() -> URL:
     config.read(
         os.path.join(
             os.path.dirname(os.path.dirname(__file__)),
+            "src",
+            "AviationWeather",
             "config.ini",
         )
     )
@@ -39,6 +41,8 @@ def engine():
     config.read(
         os.path.join(
             os.path.dirname(os.path.dirname(__file__)),
+            "src",
+            "AviationWeather",
             "config.ini",
         )
     )
@@ -60,6 +64,8 @@ def sample_data_engine():
     config.read(
         os.path.join(
             os.path.dirname(os.path.dirname(__file__)),
+            "src",
+            "AviationWeather",
             "config.ini",
         )
     )

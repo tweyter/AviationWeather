@@ -3,7 +3,7 @@ AviationWeather
 ===============
 
 
-Requires a config.ini file in the top directory (the same directory as this README file).
+Requires a config.ini file in the source package directory (the same directory as the source code).
 The config file should have the following elements:
 
 ['sqlalchemy']
@@ -25,3 +25,9 @@ database = should be aviationweather
 environment = development or testing or production
 
 logpath = path to log file (make sure permissions are correct)
+
+[flightaware.com]
+
+username = fcview
+
+api_key = fcview's FlightAware V3 api key goes here.

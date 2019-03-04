@@ -5,9 +5,9 @@ import datetime
 from sqlalchemy.orm.session import Session
 from lxml import etree
 
-from src import converter
-from src.sql_classes import AirSigmet, Metar, MetarSkyCondition
-from src.xml_classes import SkyConditionXML, TurbulenceConditionXML
+from src.AviationWeather import converter
+from src.AviationWeather.sql_classes import AirSigmet, Metar, MetarSkyCondition
+from src.AviationWeather.xml_classes import SkyConditionXML, TurbulenceConditionXML
 
 
 def test_bytes_to_xml():

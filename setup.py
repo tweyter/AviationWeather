@@ -18,7 +18,7 @@ if sys.version_info < (3, 6):
 
 NAME = "AviationWeather"
 PACKAGES = find_packages(where="src")
-META_PATH = os.path.join('src', '__init__.py')
+META_PATH = os.path.join('src', 'AviationWeather', '__init__.py')
 KEYWORDS = "aviation weather metar taf airmet sigmet"
 CLASSIFIERS = [
     "Development Status :: 3 - Alpha",
@@ -101,8 +101,8 @@ if __name__ == '__main__':
         include_package_data=True,
         entry_points={
             'console_scripts': [
-                'calculations = src.calculations:main',
-                'converter = src.converter:main'
+                'calculations = AviationWeather.__main__:calc',
+                'converter = AviationWeather.__main__:conv'
             ]
         },
     )

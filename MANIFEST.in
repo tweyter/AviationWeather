@@ -1,0 +1,4 @@
+graft src/AviationWeather
+include README.rst
+include CHANGELOG.rst
+graft docs/build/html

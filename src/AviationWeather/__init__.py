@@ -1,4 +1,5 @@
 # coding=utf-8
+from . import calculations, converter
 
 __version__ = '0.1.2'
 

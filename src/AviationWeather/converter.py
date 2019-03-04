@@ -20,12 +20,11 @@ from sqlalchemy.exc import OperationalError
 from sqlalchemy_utils.functions import database_exists, create_database
 import requests
 
-from src.sql_classes import AirSigmet, Taf, Metar
-from src.xml_classes import AirSigmetXML2, PointsXML2, TafXML, ForecastXML, SkyConditionXML
-from src.xml_classes import TurbulenceConditionXML, IcingConditionXML
-from src.xml_classes import MetarXML, MetarSkyConditionXML
-from src import logging_setup
-
+from .sql_classes import AirSigmet, Taf, Metar
+from .xml_classes import AirSigmetXML2, PointsXML2, TafXML, ForecastXML, SkyConditionXML
+from .xml_classes import TurbulenceConditionXML, IcingConditionXML
+from .xml_classes import MetarXML, MetarSkyConditionXML
+from . import logging_setup
 
 logging_setup.setup()
 logger = logging.getLogger(__name__)
@@ -301,7 +300,7 @@ def main(args):
     config = configparser.ConfigParser()
     config.read(
         os.path.join(
-            os.path.dirname(os.path.dirname(__file__)),
+            os.path.dirname(__file__),
             "config.ini",
         )
     )
