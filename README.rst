@@ -92,3 +92,13 @@ Example::
 If you installed a separate version of pyenv, then use your $PYENV_ROOT::
 
 $PYENV_ROOT/versions/bin/<name of venv>/bin converter metar
+
+To use the calculations program, the command is similar,
+The command is 'calculations' followed by the weather type request (metar,
+taf, or airsigmet) followed by the flight-id (3-letter airline + flight number),
+then departure airport, then arrival airport, then optional departure time in
+epoch format.  Example: ::
+
+$PYENV_ROOT/versions/bin/<name of venv>/bin calculations metar DAL124 JFK LAX
+
+The output is then sent to stdout

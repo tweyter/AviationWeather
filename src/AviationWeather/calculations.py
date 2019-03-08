@@ -273,6 +273,40 @@ def get_flightinfostatus(
     return "", 0, "", ""
 
 
+def get_faflightid(client: Client, flt_ident: str, dep_apt: str, arr_apt: str, departure_epoch: float = 0.0)\
+        -> Tuple[str, dict]:
+    """
+    Find the FaFlightID for the flight in question.
+
+    :param client: WASD client.
+    :param flt_ident: Airline and flight number (ie. DAL2093)
+    :param dep_apt: Departure airport (3 letter IATA code)
+    :param arr_apt: Arrival airport (3 letter IATA code)
+    :param departure_epoch: Optional departure time in POSIX Epoch format.
+    :return: FaFlightID for the flight.
+    """
+    flight_list = client.service.FlightInfoStatus(flt_ident)
+
+    first_choice = {}
+
+    for flight in flight_list['flights']:
+        if (
+            flight['ident'] == flt_ident
+            and flight['origin']['alternate_ident'] == dep_apt
+            and flight['destination']['alternate_ident'] == arr_apt
+        ):
+            first_choice = flight
+            if departure_epoch:
+                if int(departure_epoch) == flight['filed_departure_time']['epoch']:
+                    return flight['faFlightID'], flight
+                else:
+                    continue
+            else:
+                return flight['faFlightID'], flight
+
+    return first_choice.get('faFlightID', ''), first_choice
+
+
 def get_flight_route_data(client, flight_id) -> list:
     """
     Get the waypoint fixes and their latitudes and longitudes for the flight route.
@@ -337,7 +371,7 @@ def metar_output(departure_metar, arrival_metar):
 
 
 def main():
-    wx_type, flt_num, departure_epoch = clean_args(sys.argv)
+    wx_type, flt_num, dep_apt, arr_apt, departure_epoch = clean_args(sys.argv)
     if wx_type == "":
         return
     config = configparser.ConfigParser()
@@ -348,21 +382,32 @@ def main():
         )
     )
 
-    session = get_db_session(config)
     client = get_flightaware_client(config)
-    flight_id, arrival_epoch, dep, arr = get_flightinfostatus(flt_num, departure_epoch, client)
-    if flight_id == "":
+    faflightid, flight_data = get_faflightid(client, flt_num, dep_apt, arr_apt, departure_epoch)
+
+    if faflightid == "":
         return
+
+    dep = flight_data['origin']['code']
+    arr = flight_data['destination']['code']
+    session = get_db_session(config)
+
+    if wx_type == 'metar':
+        metar_data = metars(session, dep, arr)
+        print(metar_output(*metar_data))
+        return
+
+    departure_epoch = flight_data["filed_departure_time"]['epoch']
+    arrival_epoch = flight_data['filed_arrival_time']['epoch']
+
     if wx_type == 'airsigmet':
-        route = get_flight_route_data(client, flight_id)
+        route = get_flight_route_data(client, faflightid)
         if not route:
             return
         airsigs = airsigmets(session, departure_epoch, arrival_epoch)
         intersecting_airsigs = find_intersecting_airsigs(airsigs, route)
         result = output(intersecting_airsigs)
-    elif wx_type == 'metar':
-        metar_data = metars(session, dep, arr)
-        result = metar_output(*metar_data)
+    
     elif wx_type == 'taf':
         taf_data = tafs(session, dep, departure_epoch, arr, arrival_epoch)
         result = output(taf_data)
@@ -371,30 +416,31 @@ def main():
     print(result)
 
 
-def clean_args(args: list) -> Tuple[str, str, float]:
+def clean_args(args: list) -> Tuple[str, str, str, str, float]:
     """
     Check for the correct number of arguments and make sure they are of the proper format.
     :param args: Command line arguments.
     :return: The cleaned arguments (weather type, flight number, and epoch departure time).
     """
     choices = {'airsigmet', 'taf', 'metar'}
-    if len(args) != 4:
+    if len(args) < 5:
         msg = f'Invalid arguments given: {args}\n'
         msg += "Arguments must be weather type (metar, taf, airsigmet), flight number, " \
-               "and epoch departure time, in that order"
+               "departure airport, arrival airport, and an optional epoch departure time, in that order"
         logger.info(msg)
-        return "", "", 0
+        return "", "", "", "", 0
     try:
-        epoch_time = float(args[3])
-    except TypeError:
-        return "", "", 0
+        epoch_time = float(args[5])
+    except IndexError:
+        epoch_time = 0.0
+    except (TypeError, ValueError):
+        return "", "", "", "", 0
     if args[1] not in choices:
-        return "", "", 0
-    return args[1], args[2], epoch_time
+        return "", "", "", "", 0
+    result = args[1:5]
+    result.append(epoch_time)
+    return tuple(result)
 
 
 if __name__ == "__main__":
-    # faFlightID = 'JBU696-1540880773-airline-0132'
-    # flight_num = "JBU696"
-    # epoch = 1541107680
     main()

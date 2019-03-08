@@ -8,8 +8,8 @@ from pygeodesy.sphericalNvector import LatLon
 from lxml import etree
 from dateutil import parser
 
-from src.AviationWeather import calculations
-from src.AviationWeather.sql_classes import AirSigmet, Points, Metar, Taf
+from AviationWeather import calculations
+from AviationWeather.sql_classes import AirSigmet, Points, Metar, Taf
 
 
 TESTS_PATH = os.path.dirname(os.path.abspath(__file__))
@@ -116,6 +116,29 @@ class Service:
             {'latitude': 0, 'longitude': 0},
             {'latitude': 1, 'longitude': 1}
         ]}
+
+
+class Service2:
+    """
+    Used for mocking FlightInfoStatus for the FlightAware API WASD client.
+
+    Data is for Delta flight 6404 (DAL6404) from JFK to LAX with a departure time of 1551650700 Epoch.
+    """
+    def __init__(self):
+        with open(os.path.join(TESTS_PATH, 'test_data/flight_info.json')) as flight_info_file:
+            self.flight_info = json.load(flight_info_file)
+
+    def FlightInfoStatus(
+            self,
+            ident: str,
+            include_ex_data: bool = False,
+            filter: str = "",
+            howMany: int = 0,
+            offset: int = 0,
+    ):
+        if ident != 'DAL6404':
+            raise ValueError('Incorrect flight Ident given in test. Should be DAL6404.')
+        return self.flight_info
 
 
 class MockClient:
@@ -231,3 +254,36 @@ def test_tafs2(dbsession: Session):
     dbsession.commit()
     result = calculations.tafs(dbsession, departure_airport, epoch, arrival_airport, epoch)
     assert result[0].station_id == 'KRDR'
+
+
+def test_get_faflightid():
+
+    class Client:
+        service = Service2()
+
+    client = Client()
+    ident = 'DAL6404'
+    dep_apt = 'JFK'
+    arr_apt = 'LAX'
+    result, _ = calculations.get_faflightid(client, ident, dep_apt, arr_apt)
+    assert result == "DAL6404-1551421630-airline-0008"
+
+
+def test_get_faflightid_with_epoch():
+
+    class Client:
+        service = Service2()
+
+    client = Client()
+    ident = 'DAL6404'
+    dep_apt = 'PDX'
+    arr_apt = 'LAX'
+    epoch = 1551301500.0
+    result, _ = calculations.get_faflightid(client, ident, dep_apt, arr_apt, epoch)
+    assert result == "DAL6404-1551075994-airline-0037"
+
+
+def test_clean_args():
+    args = ['calculations', 'metar', 'DAL6404', 'JFK', 'LAX', 1551650700.0]
+    result = calculations.clean_args(args)
+    assert result == tuple(args[1:])
