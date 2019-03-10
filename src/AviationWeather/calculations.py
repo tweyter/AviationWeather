@@ -96,7 +96,7 @@ def get_db_session(config: configparser.ConfigParser) -> Session:
     session_maker = sessionmaker(bind=engine)
     session = session_maker()
     try:
-        session.query('1').from_statement('SELECT 1').all()
+        session.execute('SELECT 1')
     except OperationalError:
         logger.exception("Could not connect to database. Check your config file and database connection.")
         raise
@@ -109,7 +109,7 @@ def tafs(
         dep_time: float,
         arr_apt: str,
         arr_time: float,
-):
+) -> List[Taf]:
     """
     Query Taf data from the database.
 
@@ -122,15 +122,16 @@ def tafs(
     """
     dt = datetime.utcfromtimestamp(dep_time)
     at = datetime.utcfromtimestamp(arr_time)
-    departure_taf = session.query(Taf).\
+    departure_taf: List[Taf] = session.query(Taf).\
         filter(Taf.station_id == dep_apt).\
         filter(Taf.valid_time_from <= dt).\
         filter(Taf.valid_time_to >= dt).all()
-    arrival_taf = session.query(Taf). \
+    arrival_taf: List[Taf] = session.query(Taf). \
         filter(Taf.station_id == arr_apt). \
         filter(Taf.valid_time_from <= at). \
         filter(Taf.valid_time_to >= at).all()
-
+    if not departure_taf or not arrival_taf:
+        raise ValueError('No taf found within time range.')
     return [departure_taf[0], arrival_taf[0]]
 
 
@@ -287,7 +288,7 @@ def get_faflightid(client: Client, flt_ident: str, dep_apt: str, arr_apt: str, d
     """
     flight_list = client.service.FlightInfoStatus(flt_ident)
 
-    first_choice = {}
+    first_choice = client.service.FlightInfoStatus
 
     for flight in flight_list['flights']:
         if (
@@ -303,8 +304,7 @@ def get_faflightid(client: Client, flt_ident: str, dep_apt: str, arr_apt: str, d
                     continue
             else:
                 return flight['faFlightID'], flight
-
-    return first_choice.get('faFlightID', ''), first_choice
+    return getattr(first_choice, 'faFlightID', ''), first_choice
 
 
 def get_flight_route_data(client, flight_id) -> list:
@@ -409,7 +409,11 @@ def main():
         result = output(intersecting_airsigs)
     
     elif wx_type == 'taf':
-        taf_data = tafs(session, dep, departure_epoch, arr, arrival_epoch)
+        try:
+            taf_data = tafs(session, dep, departure_epoch, arr, arrival_epoch)
+        except ValueError():
+            print('No tafs found within time range.')
+            return
         result = output(taf_data)
     else:
         raise ValueError("Must be one of airsigmet, metar, or taf.")

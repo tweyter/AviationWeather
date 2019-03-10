@@ -45,7 +45,7 @@ class Points(Base):
     latitude = Column(Float)
     longitude = Column(Float)
 
-    airsigmet = relationship("AirSigmet", back_populates="area")
+    airsigmet = relationship("AirSigmet", back_populates="area", cascade="all, delete")
 
     def __repr__(self):
         repr_string = "Points({latitude}, {longitude})".format(
@@ -70,7 +70,7 @@ class AirSigmet(Base):
     movement_dir_degrees = Column(Integer)
     movement_speed_kt = Column(Integer)
     area__num_points = Column(Integer)
-    area = relationship("Points", order_by=Points.id, back_populates="airsigmet")
+    area = relationship("Points", order_by=Points.id, back_populates="airsigmet", cascade="all, delete")
 
     def __repr__(self):
         return "AirSigmet({raw_text}, {valid_time_from}, {valid_time_to}, " \
@@ -113,10 +113,10 @@ class Forecast(Base):
     vert_vis_ft = Column(Integer)
     wx_string = Column(String(500))
     not_decoded = Column(String(500))
-    taf = relationship("Taf", back_populates="forecast")
-    sky_condition = relationship("SkyCondition", back_populates="forecast")
-    turbulence_condition = relationship("TurbulenceCondition", back_populates="forecast")
-    icing_condition = relationship("IcingCondition", back_populates="forecast")
+    taf = relationship("Taf", back_populates="forecast", cascade="all, delete")
+    sky_condition = relationship("SkyCondition", back_populates="forecast", cascade="all, delete")
+    turbulence_condition = relationship("TurbulenceCondition", back_populates="forecast", cascade="all, delete")
+    icing_condition = relationship("IcingCondition", back_populates="forecast", cascade="all, delete")
 
     def __repr__(self):
         return "Forecast({time_from}, {time_to}, {change_indicator}, {time_becoming}, {probability}, " \
@@ -157,7 +157,7 @@ class Taf(Base):
     latitude = Column(Float)
     longitude = Column(Float)
     elevation_m = Column(Float)
-    forecast = relationship("Forecast", order_by=Forecast.id, back_populates="taf")
+    forecast = relationship("Forecast", order_by=Forecast.id, back_populates="taf", cascade="all, delete")
 
     def __repr__(self):
         return "Taf({raw_text}, {station_id}, {issue_time}, {bulletin_time}, {valid_time_from}, " \
@@ -184,7 +184,7 @@ class SkyCondition(Base):
     sky_cover = Column(String(30))
     cloud_base_ft_agl = Column(Integer)
     cloud_type = Column(String(30))
-    forecast = relationship("Forecast", back_populates="sky_condition")
+    forecast = relationship("Forecast", back_populates="sky_condition", cascade="all, delete")
 
     def __repr__(self):
         return "SkyCondition({sky_cover}, {cloud_base_ft_agl}, {cloud_type})".format(
@@ -203,7 +203,7 @@ class TurbulenceCondition(Base):
     turbulence_intensity = Column(String(30))
     turbulence_min_alt_ft_agl = Column(Integer)
     turbulence_max_alt_ft_agl = Column(Integer)
-    forecast = relationship("Forecast", back_populates="turbulence_condition")
+    forecast = relationship("Forecast", back_populates="turbulence_condition", cascade="all, delete")
 
     def __repr__(self):
         return "TurbulenceCondition({turbulence_intensity}, {turbulence_min_alt_ft_agl}, " \
@@ -223,7 +223,7 @@ class IcingCondition(Base):
     icing_intensity = Column(String(30))
     icing_min_alt_ft_agl = Column(Integer)
     icing_max_alt_ft_agl = Column(Integer)
-    forecast = relationship("Forecast", back_populates="icing_condition")
+    forecast = relationship("Forecast", back_populates="icing_condition", cascade="all, delete")
 
     def __repr__(self):
         return "IcingCondition({icing_intensity}, {icing_min_alt_ft_agl}, {icing_max_alt_ft_agl})".format(
@@ -268,7 +268,7 @@ class Metar(Base):
     metar_type = Column(String(30))
     elevation_m = Column(Float)
 
-    sky_condition = relationship("MetarSkyCondition", back_populates="metar")
+    sky_condition = relationship("MetarSkyCondition", back_populates="metar", cascade="all, delete")
 
     def __repr__(self):
         return "Metar(" \
@@ -343,7 +343,7 @@ class MetarSkyCondition(Base):
     sky_cover = Column(String(30))
     cloud_base_ft_agl = Column(Integer)
     cloud_type = Column(String(30))
-    metar = relationship("Metar", back_populates="sky_condition")
+    metar = relationship("Metar", back_populates="sky_condition", cascade="all, delete")
 
     def __repr__(self):
         return "SkyCondition({sky_cover}, {cloud_base_ft_agl}, {cloud_type})".format(

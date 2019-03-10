@@ -74,11 +74,11 @@ The config file should have the following elements:
 Command line operation
 ----------------------
 
-The Python interpreter for this program is located at:
+The Python binary for this program is located at:
 
-/home/tweyter/.pyenv/versions/avwx_venv/bin/python
+/home/tweyter/.pyenv/versions/avwx_venv/bin/
 
-To run the converter program, use the following command:
+To run the converter program, execute the following binary program:
 
 converter <weather type>
 
@@ -86,12 +86,12 @@ Where weather type is one of "metar", "taf" or "airsigmet"
 
 Example::
 
-/home/tweyter/.pyenv/versions/avwx_venv/bin/python converter metar
+/home/tweyter/.pyenv/versions/avwx_venv/bin/converter metar
 
 
 If you installed a separate version of pyenv, then use your $PYENV_ROOT::
 
-$PYENV_ROOT/versions/bin/<name of venv>/bin converter metar
+$PYENV_ROOT/versions/bin/<name of venv>/bin/converter metar
 
 To use the calculations program, the command is similar,
 The command is 'calculations' followed by the weather type request (metar,
@@ -99,6 +99,6 @@ taf, or airsigmet) followed by the flight-id (3-letter airline + flight number),
 then departure airport, then arrival airport, then optional departure time in
 epoch format.  Example: ::
 
-$PYENV_ROOT/versions/bin/<name of venv>/bin calculations metar DAL124 JFK LAX
+$PYENV_ROOT/versions/bin/<name of venv>/bin/calculations metar DAL124 JFK LAX
 
 The output is then sent to stdout

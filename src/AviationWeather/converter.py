@@ -10,6 +10,7 @@ import gzip
 import sys
 import logging
 import datetime
+import warnings
 
 from lxml import etree
 from lxml.etree import Element
@@ -17,7 +18,6 @@ from sqlalchemy import create_engine
 from sqlalchemy.engine.url import URL
 from sqlalchemy.orm import sessionmaker, Session
 from sqlalchemy.exc import OperationalError
-from sqlalchemy_utils.functions import database_exists, create_database
 import requests
 
 from .sql_classes import AirSigmet, Taf, Metar
@@ -228,15 +228,19 @@ def delete_old_data(weather_type: str, dbsession: Session) -> None:
     Deletes weather data from the database if it is older than 7 days.
 
     :param weather_type: metar, taf, or airsigmet
+    :param dbsession: The current database session.
     """
     current_time = datetime.datetime.now()
     deletion_time = current_time - datetime.timedelta(days=7)
     if weather_type == 'metar':
-        dbsession.query(Metar).filter(Metar.observation_time < deletion_time).delete()
+        to_delete = dbsession.query(Metar).filter(Metar.observation_time < deletion_time)
     elif weather_type == 'taf':
-        dbsession.query(Taf).filter(Taf.issue_time < deletion_time).delete()
+        to_delete = dbsession.query(Taf).filter(Taf.issue_time < deletion_time)
     elif weather_type == 'airsigmet':
-        dbsession.query(AirSigmet).filter(AirSigmet.valid_time_to < deletion_time).delete()
+        to_delete = dbsession.query(AirSigmet).filter(AirSigmet.valid_time_to < deletion_time)
+    else:
+        return
+    to_delete.delete()
 
 
 def get_db_session(config: configparser.ConfigParser) -> Session:
@@ -252,12 +256,15 @@ def get_db_session(config: configparser.ConfigParser) -> Session:
         config['sqlalchemy']['password'],
         config['sqlalchemy']['host'],
         config['sqlalchemy']['port'],
-        config['sqlalchemy']['database'],
+        # config['sqlalchemy']['database'],
     )
-    if not database_exists(url):
-        msg = f"No database named <{config['sqlalchemy']['database']}> found. Creating..."
-        logger.info(msg)
-        create_database(url)
+    engine = create_engine(url)
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore")
+        engine.execute(f"CREATE DATABASE IF NOT EXISTS {config['sqlalchemy']['database']};")
+    engine.dispose()
+
+    url.database = config['sqlalchemy']['database']
     engine = create_engine(url)
     session_maker = sessionmaker(bind=engine)
     session = session_maker()
