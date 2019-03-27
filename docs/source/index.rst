@@ -14,6 +14,17 @@ Welcome to AviationWeather's documentation!
    configuration
 
 
+Source code
+===========
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Modules:
+
+   calculations
+   converter
+
+
 Indices and tables
 ==================
 
