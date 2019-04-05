@@ -1,6 +1,7 @@
 from sqlalchemy import Column, Integer, String, Float, ForeignKey, DateTime
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm.collections import InstrumentedList
 
 
 class Base(object):
@@ -45,7 +46,7 @@ class Points(Base):
     latitude = Column(Float)
     longitude = Column(Float)
 
-    airsigmet = relationship("AirSigmet", back_populates="area", cascade="all, delete")
+    airsigmet: InstrumentedList = relationship("AirSigmet", back_populates="area", cascade="all, delete")
 
     def __repr__(self):
         repr_string = "Points({latitude}, {longitude})".format(
@@ -70,7 +71,7 @@ class AirSigmet(Base):
     movement_dir_degrees = Column(Integer)
     movement_speed_kt = Column(Integer)
     area__num_points = Column(Integer)
-    area = relationship("Points", order_by=Points.id, back_populates="airsigmet", cascade="all, delete")
+    area: InstrumentedList = relationship("Points", order_by=Points.id, back_populates="airsigmet", cascade="all, delete")
 
     def __repr__(self):
         return "AirSigmet({raw_text}, {valid_time_from}, {valid_time_to}, " \
