@@ -30,7 +30,7 @@ You will also need pyenv-virtualenv. To install::
 Then to create a virtualenv, type the following, where <name of venv>
 is the name you choose to call the virtualenv (I recommend naming it avwx_venv for consistency).::
 
-    pyenv virtualenv 3.6.1 <name of venv>
+    pyenv virtualenv 3.6.6 <name of venv>
 
 Then activate the virtualenv by typing::
 
